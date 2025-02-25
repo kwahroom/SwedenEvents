@@ -12,14 +12,15 @@ import (
 )
 
 type Event struct {
-	ID		int `json:"id"`
-	Title   struct {
+	ID    int `json:"id"`
+	Title struct {
 		Rendered string `json:"rendered"`
 	} `json:"title"`
-	Acf		struct {
+	Acf struct {
 		StartDatum string `json:"startdatum"`
 	} `json:"acf"`
 }
+
 /*
 {
     "id": 5156,
@@ -36,7 +37,6 @@ type Event struct {
       "borjar": "19:30",
       "slutar": "",
   }*/
-
 
 func fetchEvents() ([]Event, error) {
 	url := "https://www.slagthuset.se/api/events"

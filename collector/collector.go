@@ -41,8 +41,7 @@ func PrintEvents() {
 	year := 0
 	var month time.Month
 
-	fmt.Println(`
-:title: Events
+	fmt.Println(`:title: Events
 :created: 2024-03-27
 :updated: 2024-03-27
 :draft: false
@@ -53,20 +52,18 @@ Objective is to collect as many events in Sweden ( or close enough ) as possible
 from Various sources. Currently it only covers the following:
 
 * Slagthuset in Malmö
-* Royal Arena in Copenhagen
-
-`)
+* Royal Arena in Copenhagen`)
 
 	for _, event := range AllEvents {
 
 		if event.Date.Year() != year {
 			year = event.Date.Year()
-			fmt.Println("\n== ", year, "\n")
+			fmt.Println("\n== ", year)
 		}
 
 		if event.Date.Month() != month {
 			month = event.Date.Month()
-			fmt.Println("\n=== ", month, "\n")
+			fmt.Println("\n=== ", month)
 		}
 
 		fmt.Println("*", event.Date.Day(), ".", event.Title, "[", event.Location, "] [", event.Category, "]")
