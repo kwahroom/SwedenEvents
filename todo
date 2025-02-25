@@ -1,0 +1,21 @@
+* spin go routine to collect and have all the other routines fetch in parallel
+
+# Event sources
+
+* malmö opera
+* 
+
+* lund
+
+```
+curl 'https://api-ts.cruncho.co/landing-page/recommendations?destination=lund&size=1000&offset=0&sponsored=false' -X POST  -H 'Accept: application/json' -H 'Content-Type: application/json' --data-raw '{"pageContext":{"destinationSlug":"lund","l1":"events","previousL1":"","clientTime":"14:28","ip":"","area":"All areas"},"endDate":"2044-03-27T12:28:59.999Z","l2":["other-events"],"l3":["arts-exhibition","christmas-concerts","comedy-quiz","dancing","diy-crafts","food-drink","guided-tours","holiday-and-festival","international-citizen-hub","kamratkortet","kids","lecture","literature-writing","litteraturdagarna","lov-i-lund","movies-film","music","nature","online-event-and-esport","online-other-events","rysliga-veckan","sports-fitness","theater","young-adults"],"format":"","startDate":"2024-03-28T23:00:59.999Z","timezone":"Europe/Stockholm","handpicked":false}'
+```
+
+* hässlaholm:
+
+```
+curl 'https://hassleholms-evenemangskalender.hoodin.com/api/v2/items?token=eyJpdiI6Ikc5WVBxSlhpb0w0R3VXZzN2SVJ4eXc9PSIsInZhbHVlIjoiWWpackg5TSs2VTV6a2pmTW9yelZZckZ0dkc3YzJneWxvSVgrN1JvTHV0T3RWMUplYWNGdk5JaDRTUjJMaisrQiIsIm1hYyI6ImYwYjAwMzNkYzQ2NjljMTMzYmQwODlmNjU4YWI4ZTMxNzFiMWEyMmVlOWNmMDJlMGE1OTEwMDRiNTRkMWI0NmQifQ==&offset=0&after=1711546748&group-events=true&hasOccasions=true&group-events=true&limit=100&output=json&output-template=featured&page=start&type=post&withImages=false&cleaner=true' -H 'Accept: application/json' | jq | less
+
+
+curl 'https://hassleholms-evenemangskalender.hoodin.com/api/v2/items?token=eyJpdiI6Ikc5WVBxSlhpb0w0R3VXZzN2SVJ4eXc9PSIsInZhbHVlIjoiWWpackg5TSs2VTV6a2pmTW9yelZZckZ0dkc3YzJneWxvSVgrN1JvTHV0T3RWMUplYWNGdk5JaDRTUjJMaisrQiIsIm1hYyI6ImYwYjAwMzNkYzQ2NjljMTMzYmQwODlmNjU4YWI4ZTMxNzFiMWEyMmVlOWNmMDJlMGE1OTEwMDRiNTRkMWI0NmQifQ==&offset=0&featured=1&group-events=true&limit=5&output=json&output-template=featured&page=start&type=post&withImages=false&cleaner=true' -H 'Accept: application/json' 
+```
