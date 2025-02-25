@@ -5,14 +5,14 @@ import (
 	//"sweden_events/cruncho"
 	"sweden_events/royalarena"
 	"sweden_events/slagthuset"
-	"sweden_events/ticketmaster"
+	//"sweden_events/ticketmaster"
 )
 
 func main() {
 	slagthuset.CollectEvents()
 	royalarena.CollectEvents()
 	//cruncho.CollectEvents()
-	ticketmaster.CollectEvents()
+	//ticketmaster.CollectEvents()
 
 	collector.PrintEvents()
 }

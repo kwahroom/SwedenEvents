@@ -94,7 +94,7 @@ func CollectEvents() {
 		day, _ := strconv.Atoi(event.InformationProgram.Startdatum[6:8])
 		tt := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.Local)*/
 		tt := time.Date(0, time.Month(0), 0, 0, 0, 0, 0, time.Local)
-		events = append(events, collector.CreateEvent(event.Title, tt, event.Venue.Name, "Music"))
+		events = append(events, collector.CreateEvent(event.Title, tt, event.Venue.Name, "Music", ""))
 	}
 
 	collector.AddEvents(events)

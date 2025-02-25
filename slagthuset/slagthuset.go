@@ -18,25 +18,12 @@ type Event struct {
 	} `json:"title"`
 	Acf struct {
 		StartDatum string `json:"startdatum"`
+		Pris string `json:"pris"`
+		TypAvEvenemang struct {
+			Name string `json:"name"`
+		} `json:"typ_av_evenemang"`
 	} `json:"acf"`
 }
-
-/*
-{
-    "id": 5156,
-    "slug": "fairytale-of-new-york",
-    "title": {
-      "rendered": "Fairytale of New York"
-    },
-    "featured_media": 5167,
-    "acf": {
-      "startdatum": "20251125",
-      "slutdatum": "",
-      "oppnar": "18:00",
-      "inslapp_till_salong": "19:00",
-      "borjar": "19:30",
-      "slutar": "",
-  }*/
 
 func fetchEvents() ([]Event, error) {
 	url := "https://www.slagthuset.se/api/events"
@@ -94,7 +81,7 @@ func CollectEvents() {
 			continue
 		}
 
-		events = append(events, collector.CreateEvent(event.Title.Rendered, tt, "Slagthuset malmö", ""))
+		events = append(events, collector.CreateEvent(event.Title.Rendered, tt, "Slagthuset malmö", event.Acf.TypAvEvenemang.Name, event.Acf.Pris))
 	}
 
 	collector.AddEvents(events)

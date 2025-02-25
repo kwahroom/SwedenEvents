@@ -56,7 +56,7 @@ func CollectEvents() {
 
 		tt := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.Local)
 
-		events = append(events, collector.CreateEvent(title, tt, "Royal Arena Copenhagen", getType(e)))
+		events = append(events, collector.CreateEvent(title, tt, "Royal Arena Copenhagen", getType(e), ""))
 	})
 
 	c.Visit("https://www.royalarena.dk/en/events")
